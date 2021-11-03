@@ -1,0 +1,3 @@
+/home/beso/Documents/0-CMake-NGain_Oct2021/results/CMakeFiles/rebuild_cache.dir
+/home/beso/Documents/0-CMake-NGain_Oct2021/results/CMakeFiles/edit_cache.dir
+/home/beso/Documents/0-CMake-NGain_Oct2021/results/CMakeFiles/anlaysis.dir
