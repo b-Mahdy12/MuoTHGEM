@@ -1,0 +1,70 @@
+/run/verbose 2
+/control/execute physics.mac
+/exampleGarfield/physics/setIonizationModel Heed true
+/exampleGarfield/physics/setGarfieldParticleTypeAndEnergy gamma 1e-6 1e+8 MeV
+/exampleGarfield/physics/setGarfieldParticleTypeAndEnergy e- 1e-6 1e-3 MeV
+/exampleGarfield/physics/setGarfieldParticleTypeAndEnergy gamma 1e-6 1e+8 MeV
+/exampleGarfield/physics/setGarfieldParticleTypeAndEnergy e- 6e-2 1e+7 MeV
+/exampleGarfield/physics/setGarfieldParticleTypeAndEnergy e+ 6e-2 1e+7 MeV
+/exampleGarfield/physics/setGarfieldParticleTypeAndEnergy mu- 1e+1 1e+8 MeV
+/exampleGarfield/physics/setGarfieldParticleTypeAndEnergy mu+ 1e+1 1e+8 MeV
+/exampleGarfield/physics/setGarfieldParticleTypeAndEnergy pi- 2e+1 1e+8 MeV
+/exampleGarfield/physics/setGarfieldParticleTypeAndEnergy pi+ 2e+1 1e+8 MeV
+/exampleGarfield/physics/setGarfieldParticleTypeAndEnergy kaon 1e+1 1e+8 MeV
+/exampleGarfield/physics/setGarfieldParticleTypeAndEnergy kaon+ 1e+1 1e+8 MeV
+/exampleGarfield/physics/setGarfieldParticleTypeAndEnergy proton 9e+1 1e+8 MeV
+/exampleGarfield/physics/setGarfieldParticleTypeAndEnergy anti_proton 9e+1 1e+8 MeV
+/exampleGarfield/physics/setGarfieldParticleTypeAndEnergy deuteron 2e+2 1e+8 MeV
+/exampleGarfield/physics/setGarfieldParticleTypeAndEnergy alpha 4e+2 1e+8 MeV
+/run/initialize
+/control/execute vis.mac
+/vis/open OGL 600x600-0+0
+/vis/sceneHandler/create OGL
+/vis/viewer/create ! ! 600x600-0+0
+/vis/viewer/refresh
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+/vis/drawVolume
+/vis/scene/create
+/vis/scene/add/volume world -1 -1 none m 0 0 0 0 0 0
+/vis/sceneHandler/attach
+/vis/viewer/set/viewpointThetaPhi 90. 180.
+/vis/scene/add/trajectories smooth
+/tracking/storeTrajectory 2
+/vis/scene/notifyHandlers
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
+/vis/scene/notifyHandlers scene-0
+/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 1
+/vis/scene/notifyHandlers scene-0
+/vis/scene/endOfEventAction accumulate
+/vis/viewer/set/autoRefresh true
+/vis/viewer/refresh
+/vis/verbose warnings
+/control/execute gui.mac
+/control/execute icons.mac
+/gui/addIcon "Open macro file" open /control/execute
+/gui/addIcon "Save viewer state" save /vis/viewer/save
+/gui/addIcon "Move" move
+/gui/addIcon "Pick" pick
+/gui/addIcon "Zoom out" zoom_out
+/gui/addIcon "Zoom in" zoom_in
+/gui/addIcon "Rotate" rotate
+/gui/addIcon "Hidden line removal" hidden_line_removal
+/gui/addIcon "Hidden line and hidden surface removal" hidden_line_and_surface_removal
+/gui/addIcon "Surfaces" solid
+/gui/addIcon "Wireframe" wireframe
+/gui/addIcon "Perspective" perspective
+/gui/addIcon "Orthographic" ortho
+/gui/addMenu file File
+/gui/addButton file Quit exit
+/gui/addMenu run Run
+/gui/addButton run run "/control/execute run.mac"
+/gui/addMenu viewer Viewer
+/gui/addButton viewer "Set style surface" "/vis/viewer/set/style surface"
+/gui/addButton viewer "Set style wireframe" "/vis/viewer/set/style wireframe"
+/gui/addButton viewer "Refresh viewer" "/vis/viewer/refresh"
+/gui/addButton viewer "Update viewer (interaction or end-of-file)" "/vis/viewer/update"
+/gui/addButton viewer "Flush viewer (= refresh + update)" "/vis/viewer/flush"
+/gui/addButton viewer "Update scene" "/vis/scene/notifyHandlers"
+/run/printProgress 100

@@ -1,0 +1,7 @@
+/media/beso/Basma/0-MScThesis/0-Smulaions/G4Garf_THGEMSample/build/CMakeFiles/install/strip.dir
+/media/beso/Basma/0-MScThesis/0-Smulaions/G4Garf_THGEMSample/build/CMakeFiles/install/local.dir
+/media/beso/Basma/0-MScThesis/0-Smulaions/G4Garf_THGEMSample/build/CMakeFiles/install.dir
+/media/beso/Basma/0-MScThesis/0-Smulaions/G4Garf_THGEMSample/build/CMakeFiles/list_install_components.dir
+/media/beso/Basma/0-MScThesis/0-Smulaions/G4Garf_THGEMSample/build/CMakeFiles/rebuild_cache.dir
+/media/beso/Basma/0-MScThesis/0-Smulaions/G4Garf_THGEMSample/build/CMakeFiles/edit_cache.dir
+/media/beso/Basma/0-MScThesis/0-Smulaions/G4Garf_THGEMSample/build/CMakeFiles/exampleGarfield.dir
